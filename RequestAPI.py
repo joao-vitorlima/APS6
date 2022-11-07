@@ -14,18 +14,16 @@ def Consult(food):
     def ConsultJson(info): 
         #consulta se valor existe     
         try:
-            info={
-                'amount':nutrients[info]['quantity'],
+            return {
+                'total':nutrients[info]['quantity'],
                 'unit': nutrients[info]['unit']
-                }
-            return info
+            }
         except:
             #se valor não existir
-            info={
-                'amount':0,
+            return {
+                'total':0,
                 'unit': 'g'
             }
-            return info
     #dicionário de saída
     dict={                          
         "Food":food,
